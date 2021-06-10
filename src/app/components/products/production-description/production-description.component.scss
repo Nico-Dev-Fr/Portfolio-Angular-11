@@ -1,0 +1,46 @@
+.production-description-container{
+    position: relative;
+    height: 100%;
+}
+.btn-top-left{
+    position: absolute;
+    padding: 10px;
+    top: 65px;
+    left: 0;
+}
+.btn-bottom{
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    bottom: 65px;
+}
+.btn-bottom button{
+    position: absolute;
+    margin: 10px;
+}
+.btn-bottom .btn-right{
+    right: 0;
+}
+.btn-bottom .btn-left{
+    left: 0;
+}
+.production-description-content{  
+    height: 100%;  
+    padding: 65px 0 0;
+    overflow: auto;
+}
+.button-tools{
+    margin: 5px;
+}
+.description-checkList{
+    margin: 10px 0;
+}
+.description-checkList .mat-icon{
+    position: relative;
+    top: 7px;
+}
+.description-checkList span{
+    line-height: 20px;
+    font-size: 18px;
+    margin-left: 5px;
+}

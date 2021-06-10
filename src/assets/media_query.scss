@@ -1,0 +1,24 @@
+
+$x: 1vw / $break-point0 * 100;
+@media screen and (max-width: $break-point0+px) {
+  @include css();
+}
+$x: 1px;
+@media screen and (min-width: $break-point0+1+px) and (max-width: $break-point1+px) {
+  @include css();
+}
+
+$x: 1px/ ($break-point3/$break-point1);
+@media screen and (min-width: $break-point1+1+px) and (max-width: $break-point2+px) {
+  @include css();
+}
+
+$x: 1px/ ($break-point3/$break-point2);
+@media screen and (min-width: $break-point2+1+px) and (max-width: $break-point3+px) {
+  @include css();
+}
+
+$x: 1px/1;
+@media screen and (min-width: $break-point3+1+px) {
+  @include css();
+}

@@ -1,0 +1,70 @@
+<div class="production-description-container" *ngIf="productionService.productionDescription">
+  <div class="btn-top-left">
+    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="hideSideNav()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="production-description-content">
+    <div class="container">
+      <h1 class="row justify-content-end">{{productionService.productionDescription.title}}</h1>
+      <hr>
+      <div class="row">
+        <div [ngClass]="productionService.productionDescription.images.length == 1 ? 'col-12' : 'col-12 col-md-6'" *ngFor="let image of productionService.productionDescription.images">
+          <img class="img-fluid" src="assets/images/{{image}}" alt="{{productionService.productionDescription.title}}">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h3>Développement web</h3>
+          <hr>
+          <h6>{{productionService.productionDescription.description}}</h6>
+          <mat-list>
+            <mat-list-item *ngFor="let item of productionService.productionDescription.tasks">
+              <div class="description-checkList">
+                <mat-icon mat-list-icon>done</mat-icon>
+                <span>{{item}}</span>
+              </div>
+              <!-- <h4 mat-line>{{item}}</h4> -->
+           </mat-list-item>
+          </mat-list>
+          
+        </div>
+        <div class="col-12 col-md-6">
+          <h3>Informations</h3>
+          <div>
+            <hr>
+            <div>Entreprise : <b>{{productionService.productionDescription.corporate}}</b></div>
+            <div>Année : <b>{{productionService.productionDescription.date}}</b></div>
+            <div>Catégorie : <b>{{productionService.productionDescription.type}}</b></div>
+            <hr>
+            <!-- <h4>Langages</h4> -->
+            <div>
+              <button mat-raised-button *ngFor="let item of productionService.productionDescription.tools" color="warn" class="button-tools">{{item}}</button>
+            </div>
+            <div *ngIf="productionService.productionDescription.url !== ''" >
+              <hr>
+              <a mat-raised-button href="{{productionService.productionDescription.url}}" target="_blank">Visiter le site</a>
+            </div>
+          </div>
+          <div *ngIf="productionService.productionDescription.games !== undefined">
+            <hr>
+            <h3>Jeux pédagogiques</h3>
+            <hr>
+            <div>
+              <a mat-raised-button *ngFor="let item of productionService.productionDescription.games" href="http://q-c.fr/m.php?c={{item.code}}" target="_blank" color="primary" class="button-tools">{{item.name}}</a>
+            </div>
+            <!-- <hr> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-bottom">
+    <button mat-fab class="btn-left" color="primary" aria-label="Example icon button with a delete icon" (click)="getPreviousProduction(productionService.productionDescription.index)">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button mat-fab class="btn-right" color="primary" aria-label="Example icon button with a delete icon" (click)="getNextProduction(productionService.productionDescription.index)">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="header_content">
+  <app-header></app-header>
+</div>
+<div class="main_content">
+  <main>
+    <mat-sidenav-container class='app-sidenav-container' [hasBackdrop]="true">
+      <app-production-item></app-production-item>
+      <mat-sidenav #sidenav mode="push" position="end" class="col-12 col-md-8 col-xl-5">
+          <app-production-description></app-production-description>
+      </mat-sidenav>
+    </mat-sidenav-container>
+  </main>
+</div>

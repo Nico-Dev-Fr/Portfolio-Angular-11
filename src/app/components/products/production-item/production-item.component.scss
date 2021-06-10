@@ -1,0 +1,17 @@
+.main-container{
+    background: url('../../../../assets/images/background_1.jpg') center center/cover fixed;
+    background-repeat: repeat-y;    
+    min-height: 100vh;
+}
+.button.active{
+    background-color: #28F;
+    color: white;
+}
+.card{
+    cursor: pointer;
+}
+
+// .card-title{    
+//     height: 1.1vw;
+//     font-size: 0.65vw;
+// }

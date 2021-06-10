@@ -1,0 +1,41 @@
+<div class="main-container py-5">
+  <div class="container py-5">
+    <div id="filters" class="row justify-content-center">
+      <button mat-raised-button class="button col-8 col-md-3 my-2 mx-2" aria-label="Tous les projets" data-filter="*" (click)="setActive('0')" [color]="btn_id=='0' ? 'primary' : 'basic'">
+        <!-- <mat-icon>star_outline</mat-icon> -->
+        <span> Tous les projets </span>
+      </button>
+      <button mat-raised-button class="button col-8 col-md-3 my-2 mx-2" aria-label="En entreprise" data-filter=".corporate" (click)="setActive('1')" [color]="btn_id=='1' ? 'primary' : 'basic'">
+        <!-- <mat-icon>corporate_fare</mat-icon> -->
+        <span> En entreprise </span>
+      </button>
+      <button mat-raised-button class="button col-8 col-md-3 my-2 mx-2" aria-label="En freelance" data-filter=".freelance" (click)="setActive('2')" [color]="btn_id=='2' ? 'primary' : 'basic'">
+        <!-- <mat-icon>free_breakfast</mat-icon> -->
+        <span> En freelance </span>
+      </button>
+    </div>
+  </div>
+  <div class="container mx-auto mt-2">
+    <div class="grid row">
+
+      <div #productionItem *ngFor="let item of productionService.productionItems; let index = index;" class="col-sm-12 col-md-6 col-xl-4 py-3 grid-item {{item.category}}" [attr.data-category]="item.category" (click)="openDescription(index)">
+        <div class="card">
+          <!-- <img class="img-fluid" src="assets/images/{{item.thumbnail}}" alt="{{item.title}}"> -->
+          <div class="card-body">
+              <h6 class="card-title">{{item.corporate}} - {{item.title}}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{item.type}}</h6>
+              <!-- <p class="card-text">{{item.description}}</p> -->
+                <!-- <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Visit Site</a>
+              <a href="#" class="btn "><i class="fab fa-github"></i> Github</a>               -->
+              <!-- <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="openDescription(index)">Voir</button>
+              </div>
+              <small class="text-muted">{{index}} mins</small> -->
+          </div>
+        </div>
+      </div>  
+        
+    </div>    
+  </div>
+
+</div>
