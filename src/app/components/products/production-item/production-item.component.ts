@@ -63,7 +63,6 @@ export class ProductionItemComponent implements OnInit {
         $( this ).addClass('is-checked');
       });
     });
-
     //Patch Isotope Positions 
     setTimeout(function(){
       $grid.isotope({ filter: '*' });
